@@ -68,7 +68,7 @@ class ET_Builder_Module_Bar_Counters_Item_Meta extends ET_Builder_Module_Bar_Cou
 		$percent_max_value_meta		   = floatval(esc_attr( get_post_meta($post_id_meta, $this->props['percent_max_value_meta'], true) ));
 		//echo "id: $post_id_meta, P: $percent_meta, M: $percent_max_value_meta";
 		
-		$percent                       = ($percent_meta * 100 ) / $percent_max_value_meta;
+		$percent                       = round(($percent_meta * 100 ) / $percent_max_value_meta, 2);
 		$background_color              = self::$_->array_get( $this->props, 'background_color' );
 		$background_color              = empty( $background_color ) ? $et_pb_counters_settings['background_color'] : $background_color;
 		$background_color_hover        = self::get_hover_value( 'background_color' );
